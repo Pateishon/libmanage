@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LibManage</title>
+  <link rel="stylesheet" href="/estilos.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="barra">
+    <span class="marca">LibManage</span>
+    <span id="usuario-actual" class="usuario" hidden></span>
+    <button id="salir" type="button" class="secundario" hidden>Cerrar sesión</button>
+  </header>
+
+  <main>
+    <p id="mensaje" role="status" class="mensaje" hidden></p>
+
+    <section id="vista-login" class="tarjeta login" aria-labelledby="titulo-login">
+      <h1 id="titulo-login">Biblioteca universitaria</h1>
+      <form id="form-login">
+        <label for="email">Correo institucional</label>
+        <input id="email" type="email" autocomplete="username" required>
+        <label for="contrasena">Contraseña</label>
+        <input id="contrasena" type="password" autocomplete="current-password" required>
+        <button type="submit">Ingresar</button>
+      </form>
+      <p class="ayuda">Usuario de prueba: ana.torres@uautonoma.cl · Lectura2026!</p>
+    </section>
+
+    <section id="vista-app" hidden>
+      <nav class="pestanas" aria-label="Secciones">
+        <button type="button" data-vista="buscar" aria-current="page">Buscar</button>
+        <button type="button" data-vista="prestamos">Mis préstamos</button>
+        <button type="button" data-vista="recomendados">Recomendados</button>
+        <button type="button" data-vista="admin" id="pestana-admin" hidden>Administración</button>
+      </nav>
+
+      <section id="buscar" class="vista">
+        <form id="form-busqueda" class="tarjeta filtros">
+          <div class="campo ancho"><label for="q">Título, autor o palabra clave</label><input id="q" maxlength="100"></div>
+          <div class="campo"><label for="autor">Autor</label><input id="autor" maxlength="100"></div>
+          <div class="campo"><label for="categoria">Categoría</label>
+            <select id="categoria"><option value="">Todas</option><option>Informática</option><option>Matemática</option>
+              <option>Historia</option><option>Literatura</option><option>Derecho</option><option>Medicina</option>
+              <option>Economía</option></select></div>
+          <div class="campo corto"><label for="desde">Año desde</label><input id="desde" type="number" min="1450" max="2100"></div>
+          <div class="campo corto"><label for="hasta">Año hasta</label><input id="hasta" type="number" min="1450" max="2100"></div>
+          <div class="campo"><label for="orden">Ordenar por</label>
+            <select id="orden"><option value="RELEVANCIA">Relevancia</option><option value="TITULO">Título</option>
+              <option value="ANIO_DESC">Más recientes</option></select></div>
+          <label class="check"><input id="disponibles" type="checkbox"> Solo disponibles</label>
+          <button type="submit">Buscar</button>
+        </form>
+        <p id="total-resultados" class="total"></p>
+        <ul id="resultados" class="lista"></ul>
+      </section>
+
+      <section id="prestamos" class="vista" hidden>
+        <h2>Mis préstamos</h2>
+        <table class="tabla"><thead><tr><th>Libro</th><th>Desde</th><th>Devolver antes de</th><th>Estado</th><th></th></tr></thead>
+          <tbody id="tabla-prestamos"></tbody></table>
+      </section>
+
+      <section id="recomendados" class="vista" hidden>
+        <h2>Recomendado para ti</h2>
+        <p class="ayuda">Según los libros que has pedido y lo que leen otros usuarios con intereses similares.</p>
+        <ul id="lista-recomendados" class="lista"></ul>
+      </section>
+
+      <section id="admin" class="vista" hidden>
+        <h2>Inventario</h2>
+        <form id="form-libro" class="tarjeta filtros">
+          <div class="campo"><label for="nuevo-isbn">ISBN-13</label><input id="nuevo-isbn" required></div>
+          <div class="campo ancho"><label for="nuevo-titulo">Título</label><input id="nuevo-titulo" required maxlength="200"></div>
+          <div class="campo"><label for="nuevo-autor">Autor</label><input id="nuevo-autor" required maxlength="200"></div>
+          <div class="campo"><label for="nuevo-categoria">Categoría</label><input id="nuevo-categoria" required></div>
+          <div class="campo corto"><label for="nuevo-anio">Año</label><input id="nuevo-anio" type="number" required></div>
+          <div class="campo corto"><label for="nuevo-ejemplares">Ejemplares</label><input id="nuevo-ejemplares" type="number" min="1" max="100" required></div>
+          <button type="submit">Agregar libro</button>
+        </form>
+        <form id="form-ejemplares" class="tarjeta filtros">
+          <div class="campo corto"><label for="ajuste-id">ID del libro</label><input id="ajuste-id" type="number" required></div>
+          <div class="campo corto"><label for="ajuste-total">Nuevo total</label><input id="ajuste-total" type="number" min="1" max="100" required></div>
+          <button type="submit">Actualizar ejemplares</button>
+        </form>
+      </section>
+    </section>
+  </main>
+</body>
+</html>

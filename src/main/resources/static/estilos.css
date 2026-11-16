@@ -1,0 +1,34 @@
+:root { --fondo: #f4f6f3; --tarjeta: #ffffff; --tinta: #1c2620; --suave: #5b675f; --borde: #d3dbd5; --acento: #2f6d4f;
+  --error: #b3261e; --error-fondo: #fbe9e7; --ok-fondo: #e3f1e8; }
+* { box-sizing: border-box; }
+body { margin: 0; font: 15px/1.5 system-ui, "Segoe UI", sans-serif; background: var(--fondo); color: var(--tinta); }
+.barra { display: flex; align-items: center; gap: 12px; padding: 12px 20px; background: var(--tarjeta); border-bottom: 1px solid var(--borde); }
+.marca { font-weight: 700; font-size: 18px; margin-right: auto; color: var(--acento); }
+main { max-width: 980px; margin: 0 auto; padding: 20px 16px; }
+.tarjeta { background: var(--tarjeta); border: 1px solid var(--borde); border-radius: 10px; padding: 16px; margin-bottom: 16px; }
+.login { max-width: 380px; margin: 40px auto; display: grid; gap: 8px; }
+.login form { display: grid; gap: 8px; }
+label { font-size: 13px; font-weight: 600; color: var(--suave); }
+input, select { font: inherit; padding: 8px 10px; border: 1px solid var(--borde); border-radius: 8px; background: #fff; width: 100%; }
+button { font: inherit; font-weight: 600; padding: 8px 14px; border-radius: 8px; border: 1px solid var(--acento); background: var(--acento); color: #fff; cursor: pointer; }
+button.secundario { background: #fff; color: var(--acento); }
+button:disabled { opacity: .5; cursor: not-allowed; }
+:focus-visible { outline: 3px solid #8fc1a6; outline-offset: 2px; }
+.filtros { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; }
+.campo { display: grid; gap: 4px; flex: 1 1 160px; }
+.campo.ancho { flex-basis: 100%; }
+.campo.corto { flex: 0 1 110px; }
+.check { display: flex; gap: 6px; align-items: center; }
+.check input { width: auto; }
+.pestanas { display: flex; gap: 6px; margin-bottom: 16px; flex-wrap: wrap; }
+.pestanas button { background: #fff; color: var(--tinta); border-color: var(--borde); }
+.pestanas button[aria-current="page"] { background: var(--acento); color: #fff; border-color: var(--acento); }
+.lista { list-style: none; padding: 0; display: grid; gap: 8px; }
+.libro { display: grid; grid-template-columns: 1fr auto; gap: 2px 12px; background: var(--tarjeta); border: 1px solid var(--borde); border-radius: 10px; padding: 12px 14px; }
+.libro .detalle { color: var(--suave); font-size: 13px; grid-column: 1; }
+.libro button { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
+.tabla { width: 100%; border-collapse: collapse; background: var(--tarjeta); }
+.tabla th, .tabla td { text-align: left; padding: 8px; border-bottom: 1px solid var(--borde); }
+.mensaje { padding: 10px 14px; border-radius: 8px; background: var(--ok-fondo); }
+.mensaje.error { background: var(--error-fondo); color: var(--error); }
+.ayuda, .total { color: var(--suave); font-size: 13px; }
