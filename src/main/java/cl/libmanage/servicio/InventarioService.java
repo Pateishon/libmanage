@@ -47,6 +47,9 @@ public final class InventarioService {
     public synchronized Libro ajustarEjemplares(long libroId, int nuevoTotal) {
         validarEjemplares(nuevoTotal);
         Libro libro = libros.porId(libroId).orElseThrow(() -> new ErrorNegocio(404, "Libro no encontrado"));
+        if (nuevoTotal < libro.prestados()) {
+            throw new ErrorNegocio(409, "Hay " + libro.prestados() + " ejemplares prestados; el total no puede ser menor");
+        }
         Libro actualizado = libros.guardar(libro.conEjemplares(nuevoTotal));
         busqueda.indexar(actualizado);
         return actualizado;
