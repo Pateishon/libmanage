@@ -68,7 +68,7 @@ public final class JdbcLibroRepositorio implements LibroRepositorio {
 
     @Override
     public Optional<Libro> porIsbn(String isbn) {
-        return uno("SELECT " + COLUMNAS + " FROM libros WHERE isbn = '" + isbn + "'", ps -> { });
+        return uno("SELECT " + COLUMNAS + " FROM libros WHERE isbn = ?", ps -> ps.setString(1, isbn));
     }
 
     @Override

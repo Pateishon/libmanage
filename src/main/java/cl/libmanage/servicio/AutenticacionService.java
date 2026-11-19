@@ -31,13 +31,16 @@ public final class AutenticacionService {
             throw new ErrorNegocio(400, "Email y contraseña son obligatorios");
         }
         String clave = email.trim().toLowerCase();
+        if (limitador.bloqueado(clave)) {
+            throw new ErrorNegocio(429, "Demasiados intentos fallidos. Intente nuevamente en 15 minutos");
+        }
         Optional<Usuario> usuario = usuarios.porEmail(clave);
-        if (usuario.isEmpty()) {
-            throw new ErrorNegocio(401, "El usuario no existe");
+        if (usuario.isEmpty() || !usuario.get().activo()
+                || !contrasenas.verificar(contrasena, usuario.get().hashContrasena())) {
+            limitador.registrarFallo(clave);
+            throw new ErrorNegocio(401, "Credenciales inválidas");
         }
-        if (!contrasenas.verificar(contrasena, usuario.get().hashContrasena())) {
-            throw new ErrorNegocio(401, "Contraseña incorrecta");
-        }
+        limitador.limpiar(clave);
         return new Ingreso(tokens.emitir(usuario.get().id(), usuario.get().rol()), usuario.get());
     }
 }
