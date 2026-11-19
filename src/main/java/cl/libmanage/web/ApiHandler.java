@@ -4,6 +4,7 @@ import cl.libmanage.dominio.ErrorNegocio;
 import cl.libmanage.dominio.Libro;
 import cl.libmanage.dominio.Prestamo;
 import cl.libmanage.dominio.Usuario;
+import cl.libmanage.seguridad.Enmascarador;
 import cl.libmanage.seguridad.TokenService.Sesion;
 import cl.libmanage.servicio.AutenticacionService.Ingreso;
 import cl.libmanage.servicio.CriteriosBusqueda;
@@ -60,7 +61,7 @@ public final class ApiHandler implements HttpHandler {
         } catch (RuntimeException e) {
             String referencia = UUID.randomUUID().toString();
             LOG.log(Level.SEVERE, "Error interno " + referencia, e);
-            respuesta = new Respuesta(500, Map.of("error", e.toString(), "referencia", referencia));
+            respuesta = new Respuesta(500, Map.of("error", "Error interno", "referencia", referencia));
         }
         enviar(intercambio, respuesta);
     }
@@ -116,6 +117,9 @@ public final class ApiHandler implements HttpHandler {
             if (metodo.equals("GET")) {
                 long usuarioId = sesion.usuarioId();
                 if (query.containsKey("usuario")) {
+                    if (!sesion.esAdmin()) {
+                        throw new ErrorNegocio(403, "Solo un administrador puede ver préstamos de otros usuarios");
+                    }
                     usuarioId = Long.parseLong(query.get("usuario"));
                 }
                 return new Respuesta(200, prestamos(app.prestamosService.prestamosDe(usuarioId)));
@@ -144,8 +148,8 @@ public final class ApiHandler implements HttpHandler {
             Map<String, Object> datos = new LinkedHashMap<>();
             datos.put("id", u.id());
             datos.put("nombre", u.nombre());
-            datos.put("email", u.email());
-            datos.put("rut", u.rut());
+            datos.put("email", Enmascarador.email(u.email()));
+            datos.put("rut", Enmascarador.rut(u.rut()));
             datos.put("rol", u.rol().name());
             return new Respuesta(200, datos);
         }
@@ -161,7 +165,9 @@ public final class ApiHandler implements HttpHandler {
     }
 
     private void exigirAdmin(HttpExchange ex) {
-        exigirSesion(ex);
+        if (!exigirSesion(ex).esAdmin()) {
+            throw new ErrorNegocio(403, "Requiere rol de administrador");
+        }
     }
 
     private static void exigirMetodo(String metodo, String esperado) {

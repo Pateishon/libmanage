@@ -8,6 +8,10 @@ final class CabecerasSeguridad {
     }
 
     static void aplicar(Headers cabeceras) {
-        // pendiente
+        cabeceras.set("X-Content-Type-Options", "nosniff");
+        cabeceras.set("X-Frame-Options", "DENY");
+        cabeceras.set("Referrer-Policy", "no-referrer");
+        cabeceras.set("Content-Security-Policy",
+                "default-src 'self'; script-src 'self'; style-src 'self'; frame-ancestors 'none'; base-uri 'none'");
     }
 }
