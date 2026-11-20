@@ -1,0 +1,15 @@
+Muestras de CPU: 1174
+Hilos:
+   99.1%  HTTP-Dispatcher
+    0.9%  main
+Métodos propios (tiempo inclusivo):
+   98.7%  cl.libmanage.web.ApiHandler.handle
+   98.3%  cl.libmanage.web.ApiHandler.enrutar
+   96.3%  cl.libmanage.servicio.BusquedaService.buscar
+   87.6%  cl.libmanage.servicio.Texto.normalizar
+   27.7%  cl.libmanage.servicio.BusquedaService.relevancia
+   27.7%  cl.libmanage.servicio.BusquedaService.lambda$comparador$1
+   27.3%  cl.libmanage.servicio.Texto.palabras
+    1.8%  cl.libmanage.servicio.RecomendacionService.recomendar
+    1.4%  cl.libmanage.servicio.RecomendacionService.lambda$recomendar$2
+    0.9%  cl.libmanage.web.Servidor.main
