@@ -1,0 +1,6 @@
+version,usuarios,operacion,solicitudes,por_segundo,p50_ms,p95_ms,p99_ms,errores
+v1.1-sin-nodelay,10,TOTAL,3025,201.7,44.1,88.1,95.6,0
+v1.1-sin-nodelay,50,TOTAL,13930,928.7,48.0,95.8,108.2,0
+v1.1-sin-nodelay,100,TOTAL,22723,1514.9,60.0,116.0,137.2,0
+v1.1-sin-nodelay,200,TOTAL,23271,1551.4,116.3,231.9,256.7,0
+v1.1-sin-nodelay,400,TOTAL,22577,1505.1,241.0,476.0,531.9,0
