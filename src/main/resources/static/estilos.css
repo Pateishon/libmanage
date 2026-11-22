@@ -1,5 +1,7 @@
 :root { --fondo: #f4f6f3; --tarjeta: #ffffff; --tinta: #1c2620; --suave: #5b675f; --borde: #d3dbd5; --acento: #2f6d4f;
   --error: #b3261e; --error-fondo: #fbe9e7; --ok-fondo: #e3f1e8; }
+/* El atributo hidden siempre oculta, aunque la clase defina display (defecto U1 hallado en aceptación). */
+[hidden] { display: none !important; }
 * { box-sizing: border-box; }
 body { margin: 0; font: 15px/1.5 system-ui, "Segoe UI", sans-serif; background: var(--fondo); color: var(--tinta); }
 .barra { display: flex; align-items: center; gap: 12px; padding: 12px 20px; background: var(--tarjeta); border-bottom: 1px solid var(--borde); }
