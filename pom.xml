@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>cl.libmanage</groupId>
   <artifactId>libmanage</artifactId>
-  <version>1.0.0</version>
+  <version>1.1.0</version>
   <name>LibManage</name>
 
   <properties>
