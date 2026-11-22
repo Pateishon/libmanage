@@ -1,0 +1,74 @@
+Picked up JAVA_TOOL_OPTIONS: -Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts -Djavax.net.ssl.trustStoreType=JKS -Dhttps.proxyHost=127.0.0.1 -Dhttps.proxyPort=33015 -Dhttp.nonProxyHosts=localhost|127.0.0.1|::1|127.*|0.*|::|169.254.*|api.anthropic.com|api-staging.anthropic.com|api-pr-preview.anthropic.com|mcp-proxy.anthropic.com|mcp-proxy-staging.anthropic.com|registry.npmjs.org|jsr.io|npm.jsr.io|pypi.org|files.pythonhosted.org|index.crates.io|proxy.golang.org|host.docker.internal|10.*|172.16.*|172.17.*|172.18.*|172.19.*|172.20.*|172.21.*|172.22.*|172.23.*|172.24.*|172.25.*|172.26.*|172.27.*|172.28.*|172.29.*|172.30.*|172.31.*|192.168.*|100.64.0.0/10|*.svc.cluster.local|*.svc.cluster.local -Djdk.http.auth.tunneling.disabledSchemes= -Djdk.http.auth.proxying.disabledSchemes=
+Picked up _JAVA_OPTIONS: -XX:+UnlockDiagnosticVMOptions -XX:DisableIntrinsic=_base64_encodeBlock,_base64_decodeBlock
+Picked up JAVA_TOOL_OPTIONS: -Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts -Djavax.net.ssl.trustStoreType=JKS -Dhttps.proxyHost=127.0.0.1 -Dhttps.proxyPort=33015 -Dhttp.nonProxyHosts=localhost|127.0.0.1|::1|127.*|0.*|::|169.254.*|api.anthropic.com|api-staging.anthropic.com|api-pr-preview.anthropic.com|mcp-proxy.anthropic.com|mcp-proxy-staging.anthropic.com|registry.npmjs.org|jsr.io|npm.jsr.io|pypi.org|files.pythonhosted.org|index.crates.io|proxy.golang.org|host.docker.internal|10.*|172.16.*|172.17.*|172.18.*|172.19.*|172.20.*|172.21.*|172.22.*|172.23.*|172.24.*|172.25.*|172.26.*|172.27.*|172.28.*|172.29.*|172.30.*|172.31.*|192.168.*|100.64.0.0/10|*.svc.cluster.local|*.svc.cluster.local -Djdk.http.auth.tunneling.disabledSchemes= -Djdk.http.auth.proxying.disabledSchemes=
+Picked up _JAVA_OPTIONS: -XX:+UnlockDiagnosticVMOptions -XX:DisableIntrinsic=_base64_encodeBlock,_base64_decodeBlock
+Picked up JAVA_TOOL_OPTIONS: -Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts -Djavax.net.ssl.trustStoreType=JKS -Dhttps.proxyHost=127.0.0.1 -Dhttps.proxyPort=33015 -Dhttp.nonProxyHosts=localhost|127.0.0.1|::1|127.*|0.*|::|169.254.*|api.anthropic.com|api-staging.anthropic.com|api-pr-preview.anthropic.com|mcp-proxy.anthropic.com|mcp-proxy-staging.anthropic.com|registry.npmjs.org|jsr.io|npm.jsr.io|pypi.org|files.pythonhosted.org|index.crates.io|proxy.golang.org|host.docker.internal|10.*|172.16.*|172.17.*|172.18.*|172.19.*|172.20.*|172.21.*|172.22.*|172.23.*|172.24.*|172.25.*|172.26.*|172.27.*|172.28.*|172.29.*|172.30.*|172.31.*|192.168.*|100.64.0.0/10|*.svc.cluster.local|*.svc.cluster.local -Djdk.http.auth.tunneling.disabledSchemes= -Djdk.http.auth.proxying.disabledSchemes=
+Picked up _JAVA_OPTIONS: -XX:+UnlockDiagnosticVMOptions -XX:DisableIntrinsic=_base64_encodeBlock,_base64_decodeBlock
+Picked up JAVA_TOOL_OPTIONS: -Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts -Djavax.net.ssl.trustStoreType=JKS -Dhttps.proxyHost=127.0.0.1 -Dhttps.proxyPort=33015 -Dhttp.nonProxyHosts=localhost|127.0.0.1|::1|127.*|0.*|::|169.254.*|api.anthropic.com|api-staging.anthropic.com|api-pr-preview.anthropic.com|mcp-proxy.anthropic.com|mcp-proxy-staging.anthropic.com|registry.npmjs.org|jsr.io|npm.jsr.io|pypi.org|files.pythonhosted.org|index.crates.io|proxy.golang.org|host.docker.internal|10.*|172.16.*|172.17.*|172.18.*|172.19.*|172.20.*|172.21.*|172.22.*|172.23.*|172.24.*|172.25.*|172.26.*|172.27.*|172.28.*|172.29.*|172.30.*|172.31.*|192.168.*|100.64.0.0/10|*.svc.cluster.local|*.svc.cluster.local -Djdk.http.auth.tunneling.disabledSchemes= -Djdk.http.auth.proxying.disabledSchemes=
+Picked up _JAVA_OPTIONS: -XX:+UnlockDiagnosticVMOptions -XX:DisableIntrinsic=_base64_encodeBlock,_base64_decodeBlock
+Picked up JAVA_TOOL_OPTIONS: -Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts -Djavax.net.ssl.trustStoreType=JKS -Dhttps.proxyHost=127.0.0.1 -Dhttps.proxyPort=33015 -Dhttp.nonProxyHosts=localhost|127.0.0.1|::1|127.*|0.*|::|169.254.*|api.anthropic.com|api-staging.anthropic.com|api-pr-preview.anthropic.com|mcp-proxy.anthropic.com|mcp-proxy-staging.anthropic.com|registry.npmjs.org|jsr.io|npm.jsr.io|pypi.org|files.pythonhosted.org|index.crates.io|proxy.golang.org|host.docker.internal|10.*|172.16.*|172.17.*|172.18.*|172.19.*|172.20.*|172.21.*|172.22.*|172.23.*|172.24.*|172.25.*|172.26.*|172.27.*|172.28.*|172.29.*|172.30.*|172.31.*|192.168.*|100.64.0.0/10|*.svc.cluster.local|*.svc.cluster.local -Djdk.http.auth.tunneling.disabledSchemes= -Djdk.http.auth.proxying.disabledSchemes=
+Picked up _JAVA_OPTIONS: -XX:+UnlockDiagnosticVMOptions -XX:DisableIntrinsic=_base64_encodeBlock,_base64_decodeBlock
+Picked up JAVA_TOOL_OPTIONS: -Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts -Djavax.net.ssl.trustStoreType=JKS -Dhttps.proxyHost=127.0.0.1 -Dhttps.proxyPort=33015 -Dhttp.nonProxyHosts=localhost|127.0.0.1|::1|127.*|0.*|::|169.254.*|api.anthropic.com|api-staging.anthropic.com|api-pr-preview.anthropic.com|mcp-proxy.anthropic.com|mcp-proxy-staging.anthropic.com|registry.npmjs.org|jsr.io|npm.jsr.io|pypi.org|files.pythonhosted.org|index.crates.io|proxy.golang.org|host.docker.internal|10.*|172.16.*|172.17.*|172.18.*|172.19.*|172.20.*|172.21.*|172.22.*|172.23.*|172.24.*|172.25.*|172.26.*|172.27.*|172.28.*|172.29.*|172.30.*|172.31.*|192.168.*|100.64.0.0/10|*.svc.cluster.local|*.svc.cluster.local -Djdk.http.auth.tunneling.disabledSchemes= -Djdk.http.auth.proxying.disabledSchemes=
+Picked up _JAVA_OPTIONS: -XX:+UnlockDiagnosticVMOptions -XX:DisableIntrinsic=_base64_encodeBlock,_base64_decodeBlock
+JUnit version 4.13.2
+...............Nov 22, 2026 9:08:52 AM cl.libmanage.web.ApiHandler handle
+SEVERE: Error interno 9f6e53ad-d34b-480b-b88e-86e587fd538a
+java.lang.IllegalStateException: SQLException: tabla libros, usuario root, clave 1234
+	at cl.libmanage.api.SeguridadApiTest$1.porId(SeguridadApiTest.java:170)
+	at cl.libmanage.web.ApiHandler.enrutar(ApiHandler.java:91)
+	at cl.libmanage.web.ApiHandler.handle(ApiHandler.java:56)
+	at jdk.httpserver/com.sun.net.httpserver.Filter$Chain.doFilter(Filter.java:98)
+	at jdk.httpserver/sun.net.httpserver.AuthFilter.doFilter(AuthFilter.java:82)
+	at jdk.httpserver/com.sun.net.httpserver.Filter$Chain.doFilter(Filter.java:101)
+	at jdk.httpserver/sun.net.httpserver.ServerImpl$Exchange$LinkHandler.handle(ServerImpl.java:969)
+	at jdk.httpserver/com.sun.net.httpserver.Filter$Chain.doFilter(Filter.java:98)
+	at jdk.httpserver/sun.net.httpserver.ServerImpl$Exchange.run(ServerImpl.java:945)
+	at java.base/java.util.concurrent.ThreadPerTaskExecutor$TaskRunner.run(ThreadPerTaskExecutor.java:314)
+	at java.base/java.lang.VirtualThread.run(VirtualThread.java:329)
+
+........................................................................
+Time: 2.526
+
+OK (87 tests)
+
+
+COBERTURA DE L?NEAS POR ARCHIVO
+cl.libmanage.dominio/ErrorNegocio.java                  4/4     100.0%  sin cubrir: []
+cl.libmanage.dominio/Libro.java                         5/5     100.0%  sin cubrir: []
+cl.libmanage.dominio/Prestamo.java                      5/5     100.0%  sin cubrir: []
+cl.libmanage.dominio/Rol.java                          10/10    100.0%  sin cubrir: []
+cl.libmanage.dominio/Usuario.java                       2/2     100.0%  sin cubrir: []
+cl.libmanage.repositorio/JdbcLibroRepositorio.java      0/63      0.0%  sin cubrir: [24, 25, 26, 27, 28, 31, 36, 37, 39, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 54, 55, 56, 57, 58, 59, 60, 66, 71, 76, 77, 78, 79, 80, 82, 83, 84, 90, 92, 93, 94, 95, 96, 97, 98, 99, 105, 106, 107, 108, 109, 110, 111, 118, 119, 120, 121, 122, 123, 124, 129, 130]
+cl.libmanage.repositorio/LibroRepositorioMemoria.java   20/20    100.0%  sin cubrir: []
+cl.libmanage.repositorio/PrestamoRepositorioMemoria.java   23/23    100.0%  sin cubrir: []
+cl.libmanage.repositorio/UsuarioRepositorioMemoria.java   19/19    100.0%  sin cubrir: []
+cl.libmanage.seguridad/CifradorDatos.java              27/33     81.8%  sin cubrir: [43, 44, 66, 67, 76, 77]
+cl.libmanage.seguridad/Contrasenas.java                18/20     90.0%  sin cubrir: [47, 48]
+cl.libmanage.seguridad/Enmascarador.java               11/13     84.6%  sin cubrir: [5, 6]
+cl.libmanage.seguridad/LimitadorIntentos.java          24/25     96.0%  sin cubrir: [32]
+cl.libmanage.seguridad/TokenService.java               30/32     93.8%  sin cubrir: [69, 70]
+cl.libmanage.servicio/AutenticacionService.java        18/19     94.7%  sin cubrir: [31]
+cl.libmanage.servicio/BusquedaService.java             92/92    100.0%  sin cubrir: []
+cl.libmanage.servicio/CriteriosBusqueda.java           21/21    100.0%  sin cubrir: []
+cl.libmanage.servicio/InventarioService.java           39/39    100.0%  sin cubrir: []
+cl.libmanage.servicio/Isbn.java                        17/19     89.5%  sin cubrir: [5, 6]
+cl.libmanage.servicio/PrestamoService.java             38/38    100.0%  sin cubrir: []
+cl.libmanage.servicio/RecomendacionService.java        80/81     98.8%  sin cubrir: [110]
+cl.libmanage.servicio/ResultadoBusqueda.java            1/1     100.0%  sin cubrir: []
+cl.libmanage.servicio/Texto.java                        8/10     80.0%  sin cubrir: [14, 15]
+cl.libmanage.web/ApiHandler.java                      176/176   100.0%  sin cubrir: []
+cl.libmanage.web/Aplicacion.java                       12/12    100.0%  sin cubrir: []
+cl.libmanage.web/ArchivosEstaticos.java                19/19    100.0%  sin cubrir: []
+cl.libmanage.web/CabecerasSeguridad.java                5/7      71.4%  sin cubrir: [7, 8]
+cl.libmanage.web/DatosDemo.java                        46/48     95.8%  sin cubrir: [59, 60]
+cl.libmanage.web/Json.java                            134/147    91.2%  sin cubrir: [67, 78, 79, 80, 81, 87, 159, 163, 164, 165, 166, 167, 170]
+cl.libmanage.web/Servidor.java                          8/39     20.5%  sin cubrir: [23, 24, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 55, 56, 57, 58, 59, 60, 63, 64, 68, 69, 70, 72, 73, 74, 75]
+
+POR PAQUETE
+cl.libmanage.dominio           26/26    100.0%
+cl.libmanage.repositorio       62/125    49.6%
+cl.libmanage.seguridad        110/123    89.4%
+cl.libmanage.servicio         314/320    98.1%
+cl.libmanage.web              400/448    89.3%
+
+TOTAL 912/1042 = 87.5%

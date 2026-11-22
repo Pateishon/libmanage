@@ -1,0 +1,16 @@
+Muestras de CPU: 882
+Hilos:
+   91.4%  virtual/ForkJoinPool
+    7.8%  main
+    0.8%  HTTP-Dispatcher
+Métodos propios (tiempo inclusivo):
+   88.4%  cl.libmanage.web.ApiHandler.handle
+   81.7%  cl.libmanage.web.ApiHandler.enrutar
+   42.6%  cl.libmanage.servicio.BusquedaService.buscar
+   35.6%  cl.libmanage.servicio.RecomendacionService.recomendar
+   35.5%  cl.libmanage.servicio.RecomendacionService.calcular
+   19.8%  cl.libmanage.servicio.RecomendacionService.lambda$calcular$4
+   11.3%  cl.libmanage.servicio.BusquedaService.interseccion
+    7.7%  cl.libmanage.web.Servidor.main
+    7.5%  cl.libmanage.repositorio.LibroRepositorioMemoria.todos
+    6.7%  cl.libmanage.web.ApiHandler.enviar

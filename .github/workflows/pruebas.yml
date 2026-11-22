@@ -1,0 +1,78 @@
+# Automatización de pruebas: se ejecuta en cada push y pull request.
+name: Pruebas
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  pruebas-java:
+    name: Unitarias, API, seguridad e integración con MySQL
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.4
+        env:
+          MYSQL_ROOT_PASSWORD: raiz-ci
+          MYSQL_DATABASE: libmanage
+        ports: ["3306:3306"]
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1 -praiz-ci"
+          --health-interval=5s --health-timeout=5s --health-retries=20
+    env:
+      LIBMANAGE_TEST_DB_URL: jdbc:mysql://127.0.0.1:3306/libmanage?sslMode=REQUIRED
+      LIBMANAGE_TEST_DB_USUARIO: root
+      LIBMANAGE_TEST_DB_CLAVE: raiz-ci
+      LIBMANAGE_TEST_DB_APP_URL: jdbc:mysql://127.0.0.1:3306/libmanage?sslMode=REQUIRED
+      LIBMANAGE_TEST_DB_APP_USUARIO: libmanage_app
+      LIBMANAGE_TEST_DB_APP_CLAVE: app-ci-${{ github.run_id }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+          cache: maven
+      - name: Crear esquema y usuario de mínimo privilegio
+        run: |
+          mysql -h 127.0.0.1 -uroot -praiz-ci libmanage < src/main/resources/db/schema.sql
+          sed "s/\${APP_DB_PASSWORD}/$LIBMANAGE_TEST_DB_APP_CLAVE/" src/main/resources/db/seguridad.sql \
+            | mysql -h 127.0.0.1 -uroot -praiz-ci
+      - name: Pruebas y cobertura (JaCoCo)
+        run: mvn -B verify
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: reportes-java
+          path: |
+            target/surefire-reports
+            target/site/jacoco
+
+  aceptacion-e2e:
+    name: Aceptación en navegador (Playwright)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Instalar Playwright
+        run: |
+          pip install playwright==1.48.0
+          python -m playwright install --with-deps chromium
+      - name: Compilar y ejecutar pruebas de aceptación
+        run: |
+          mkdir -p build/classes
+          javac -encoding UTF-8 -d build/classes $(find src/main/java -name "*.java")
+          cp -r src/main/resources/* build/classes/
+          python e2e/test_aceptacion.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: capturas-aceptacion
+          path: e2e/capturas

@@ -13,6 +13,7 @@ import java.net.InetSocketAddress;
 import java.security.SecureRandom;
 import java.time.Clock;
 import java.util.Base64;
+import java.util.concurrent.Executors;
 import java.util.logging.Logger;
 
 /** Punto de entrada: levanta la API y la interfaz web. */
@@ -22,12 +23,15 @@ public final class Servidor {
     private Servidor() {
     }
 
-    /** Inicia el servidor HTTP. */
+    /** Inicia el servidor HTTP; cada solicitud se atiende en un hilo virtual. */
     public static HttpServer iniciar(Aplicacion app, Clock reloj, String host, int puerto) throws IOException {
+        // TCP_NODELAY: sin esto, el algoritmo de Nagle junto al ACK retardado del cliente agregaba
+        // ~40 ms a cada respuesta (cuello de botella detectado en la prueba de carga).
+        System.setProperty("sun.net.httpserver.nodelay", "true");
         HttpServer servidor = HttpServer.create(new InetSocketAddress(host, puerto), 512);
         servidor.createContext("/api/", new ApiHandler(app, reloj));
         servidor.createContext("/", new ArchivosEstaticos());
-        servidor.setExecutor(null);  // ejecutor por defecto
+        servidor.setExecutor(Executors.newVirtualThreadPerTaskExecutor());
         servidor.start();
         return servidor;
     }

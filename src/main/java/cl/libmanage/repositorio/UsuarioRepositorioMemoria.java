@@ -31,8 +31,8 @@ public final class UsuarioRepositorioMemoria implements UsuarioRepositorio {
     public Usuario guardar(Usuario usuario) {
         Usuario conId = usuario.id() == 0 ? usuario.conId(secuencia.incrementAndGet()) : usuario;
         String indice = cifrador.indiceCiego(conId.email());
-        filas.put(conId.id(), new RegistroAlmacenado(conId.id(), conId.nombre(), conId.email(),
-                conId.rut(), indice, conId.hashContrasena(), conId.rol(), conId.activo()));
+        filas.put(conId.id(), new RegistroAlmacenado(conId.id(), conId.nombre(), cifrador.cifrar(conId.email()),
+                cifrador.cifrar(conId.rut()), indice, conId.hashContrasena(), conId.rol(), conId.activo()));
         porIndiceEmail.put(indice, conId.id());
         return conId;
     }
@@ -54,7 +54,7 @@ public final class UsuarioRepositorioMemoria implements UsuarioRepositorio {
     }
 
     private Usuario aUsuario(RegistroAlmacenado fila) {
-        return new Usuario(fila.id(), fila.nombre(), fila.emailCifrado(), fila.rutCifrado(), fila.hashContrasena(),
-                fila.rol(), fila.activo());
+        return new Usuario(fila.id(), fila.nombre(), cifrador.descifrar(fila.emailCifrado()),
+                cifrador.descifrar(fila.rutCifrado()), fila.hashContrasena(), fila.rol(), fila.activo());
     }
 }
